@@ -1,10 +1,10 @@
-package com.kakaobank
+package com.kakabank.core
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest
-class KakaobankApplicationTests {
+class CoreApplicationTests {
 
     @Test
     fun contextLoads() {

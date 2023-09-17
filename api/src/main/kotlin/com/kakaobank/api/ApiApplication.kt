@@ -1,11 +1,11 @@
-package com.kakaobank
+package com.kakaobank.api
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class KakaobankApplication
+class ApiApplication
 
 fun main(args: Array<String>) {
-    runApplication<KakaobankApplication>(*args)
+    runApplication<ApiApplication>(*args)
 }

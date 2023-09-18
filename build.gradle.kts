@@ -14,7 +14,6 @@ java {
 
 allprojects {
     repositories {
-        jcenter()
         mavenCentral()
     }
 }
@@ -37,7 +36,7 @@ subprojects {
         implementation("org.jetbrains.kotlin:kotlin-reflect")
         implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
         implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor:1.6.4")
-        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor:1.6.4")
+        implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.3")
         implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:1.4.1")
         implementation("org.jetbrains.kotlinx:kotlinx-coroutines-reactor")
         implementation("io.projectreactor.kotlin:reactor-kotlin-extensions")
@@ -48,6 +47,10 @@ subprojects {
         implementation("org.springframework.boot:spring-boot-starter-web")
         implementation("org.apache.commons:commons-lang3:3.12.0")
 
+
+        implementation("com.playtika.reactivefeign:feign-reactor-webclient:3.2.11")
+        implementation("com.playtika.reactivefeign:feign-reactor-cloud:3.2.11")
+        implementation("com.playtika.reactivefeign:feign-reactor-spring-configuration:3.2.11")
 
         tasks.withType<KotlinCompile> {
             kotlinOptions {

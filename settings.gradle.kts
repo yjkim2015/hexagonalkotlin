@@ -4,6 +4,6 @@ pluginManagement {
     }
 }
 
-rootProject.name = "kakaobank"
+rootProject.name = "hexagonalkotlin"
 
 include("api", "core", "infra")

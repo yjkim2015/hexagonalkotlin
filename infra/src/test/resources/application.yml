@@ -1,0 +1,13 @@
+spring:
+  redis:
+    host: 127.0.0.1
+    port: 6379
+
+apis:
+  kakao:
+    url: "https://dapi.kakao.com"
+    auth: "KakaoAK 23a88e0e96c04706c6cf0d57eae1021f"
+  naver:
+    url: "https://openapi.naver.com"
+    client_id: "LyF_oeTecDUPUEzEGCfC"
+    client_secret: "Biuc_uFAsp"

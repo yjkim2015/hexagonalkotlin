@@ -3,6 +3,7 @@ package com.example.demo
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 import org.springframework.cloud.openfeign.EnableFeignClients
+import org.springframework.data.redis.repository.configuration.EnableRedisRepositories
 import reactivefeign.spring.config.EnableReactiveFeignClients
 
 @SpringBootApplication

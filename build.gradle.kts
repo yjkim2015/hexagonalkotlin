@@ -1,4 +1,7 @@
+import org.jetbrains.kotlin.com.intellij.openapi.vfs.StandardFileSystems.jar
+import org.jetbrains.kotlin.gradle.plugin.mpp.pm20.util.archivesName
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import org.jetbrains.kotlin.storage.CacheResetOnProcessCanceled.enabled
 
 plugins {
     id("org.springframework.boot") version "2.7.6" apply false
@@ -24,7 +27,7 @@ subprojects {
     apply(plugin = "io.spring.dependency-management")
     apply(plugin = "org.jetbrains.kotlin.plugin.spring")
 
-    group = "com.kakaobank"
+    group = "com.example.demo"
     version = "0.0.1-SNAPSHOT"
 
 
@@ -32,6 +35,7 @@ subprojects {
         implementation("org.springframework.boot:spring-boot-starter")
         implementation("org.jetbrains.kotlin:kotlin-reflect")
         testImplementation("org.springframework.boot:spring-boot-starter-test")
+        implementation("io.springfox:springfox-boot-starter:3.0.0")
 
         implementation("org.jetbrains.kotlin:kotlin-reflect")
         implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
@@ -80,6 +84,7 @@ subprojects {
 }
 
 project(":api") {
+
     dependencies {
         implementation(project(":core"))
         implementation(project(":infra"))
@@ -87,8 +92,9 @@ project(":api") {
 }
 
 
-project(":infra"){
+project(":infra") {
     dependencies {
         implementation(project(":core"))
     }
 }
+

@@ -15,8 +15,8 @@ class BlogController(
     private val blogService: BlogService
 ) {
     @RequestMapping(value=["/search"], produces = ["application/json"], method = [RequestMethod.GET])
-    suspend fun getBlogSearch(@RequestParam("query") query:String, @RequestParam("sort") sort:String = "accuracy",
-    @RequestParam("page") page: Int = 1, @RequestParam("size") size: Int = 10): BlogDto?{
+    suspend fun getBlogSearch(@RequestParam("query") query:String, @RequestParam("sort") sort:String,
+    @RequestParam("page") page: Int, @RequestParam("size") size: Int): BlogDto?{
         return blogService.getBlogSearch(query, sort, page, size);
     }
 

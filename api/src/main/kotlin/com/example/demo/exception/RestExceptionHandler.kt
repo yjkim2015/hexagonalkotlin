@@ -13,6 +13,15 @@ import javax.servlet.http.HttpServletResponse
 @Slf4j
 class RestExceptionHandler: ResponseEntityExceptionHandler() {
 
+    @ExceptionHandler(CustomException::class)
+    public fun handleCustomException(request: HttpServletRequest, response: HttpServletResponse, exception: CustomException) : ResponseEntity<Object>{
+        logger.error(exception.message, exception)
+        var errorResponse = ErrorResponse(exception.status, exception.message, exception.data)
+        errorResponse.path = request.servletPath
+        errorResponse.timeStamp = Instant.now()
+        return buildResponseEntity(errorResponse);
+    }
+
     @ExceptionHandler(Exception::class)
     public fun handleAllException(request: HttpServletRequest, response: HttpServletResponse, exception: Exception) : ResponseEntity<Object>{
         logger.error(exception.message, exception)

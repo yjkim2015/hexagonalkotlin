@@ -24,7 +24,7 @@ subprojects {
     apply(plugin = "io.spring.dependency-management")
     apply(plugin = "org.jetbrains.kotlin.plugin.spring")
 
-    group = "com.kakaobank"
+    group = "com.example.demo"
     version = "0.0.1-SNAPSHOT"
 
 
@@ -60,7 +60,6 @@ subprojects {
         implementation("it.ozimov:embedded-redis:0.7.2")
         testImplementation("io.mockk:mockk:1.13.7")
 
-
         tasks.withType<KotlinCompile> {
             kotlinOptions {
                 freeCompilerArgs += "-Xjsr305=strict"
@@ -80,6 +79,7 @@ subprojects {
 }
 
 project(":api") {
+
     dependencies {
         implementation(project(":core"))
         implementation(project(":infra"))
@@ -87,8 +87,9 @@ project(":api") {
 }
 
 
-project(":infra"){
+project(":infra") {
     dependencies {
         implementation(project(":core"))
     }
 }
+

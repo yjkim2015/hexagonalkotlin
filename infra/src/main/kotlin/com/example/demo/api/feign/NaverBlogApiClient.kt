@@ -17,8 +17,8 @@ interface NaverBlogApiClient {
     fun getNaverBlogSearch(
         @RequestHeader("X-Naver-Client-Id") clientId: String,
         @RequestHeader("X-Naver-Client-Secret") clientSecret: String,
-        @RequestParam("query") query: String,
+        @RequestParam("query") query: String?,
         @RequestParam("display") display: Int,
         @RequestParam("start") start: Int,
-        @RequestParam("sort") sort: String): Mono<NaverBlogEntity>
+        @RequestParam("sort") sort: String?): Mono<NaverBlogEntity>
 }

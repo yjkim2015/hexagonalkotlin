@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestHeader
 import org.springframework.web.bind.annotation.RequestParam
 import reactivefeign.spring.config.ReactiveFeignClient
 import reactor.core.publisher.Mono
+import javax.persistence.Cacheable
 
 
 @ReactiveFeignClient(

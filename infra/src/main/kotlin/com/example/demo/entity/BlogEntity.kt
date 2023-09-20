@@ -2,10 +2,11 @@ package com.example.demo.entity
 
 import org.springframework.data.redis.core.RedisHash
 import org.springframework.data.annotation.Id
+import org.springframework.data.redis.core.TimeToLive
 
-@RedisHash("blogCounter")
-data class BlogCounter(
+@RedisHash("BlogEntity")
+data class BlogEntity(
     @Id
     var query: String,
-    var value: Long?
+    var value: Any?,
 )

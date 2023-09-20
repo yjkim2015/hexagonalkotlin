@@ -52,6 +52,15 @@ subprojects {
         implementation("com.playtika.reactivefeign:feign-reactor-cloud:3.2.11")
         implementation("com.playtika.reactivefeign:feign-reactor-spring-configuration:3.2.11")
 
+        implementation("org.projectlombok:lombok:1.18.22")
+        runtimeOnly("com.h2database:h2")
+        implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+        implementation("org.springframework.boot:spring-boot-starter-jdbc")
+        implementation("org.springframework.boot:spring-boot-starter-data-redis") // 추가
+        implementation("it.ozimov:embedded-redis:0.7.2")
+        testImplementation("io.mockk:mockk:1.13.7")
+
+
         tasks.withType<KotlinCompile> {
             kotlinOptions {
                 freeCompilerArgs += "-Xjsr305=strict"
@@ -76,6 +85,7 @@ project(":api") {
         implementation(project(":infra"))
     }
 }
+
 
 project(":infra"){
     dependencies {

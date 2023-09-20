@@ -1,6 +1,7 @@
 package com.example.demo.controller
 
 import com.example.demo.domain.BlogService
+import com.example.demo.model.BlogDto
 import lombok.RequiredArgsConstructor
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod
@@ -13,14 +14,14 @@ import org.springframework.web.bind.annotation.RestController
 class BlogController(
     private val blogService: BlogService
 ) {
-
     @RequestMapping(value=["/search"], produces = ["application/json"], method = [RequestMethod.GET])
-    suspend fun getBlogSearch(@RequestParam("query") query:String?, @RequestParam("sort") sort:String = "accuracy",
-    @RequestParam("page") page: Int = 1, @RequestParam("size") size: Int = 10): Object?{        return blogService.getBlogSearch(query, sort, page, size);
+    suspend fun getBlogSearch(@RequestParam("query") query:String, @RequestParam("sort") sort:String = "accuracy",
+    @RequestParam("page") page: Int = 1, @RequestParam("size") size: Int = 10): BlogDto?{
+        return blogService.getBlogSearch(query, sort, page, size);
     }
 
     @RequestMapping(value=["/popularity"], produces = ["application/json"], method = [RequestMethod.GET])
-    suspend fun getPopularBlog(): Object? {
+    suspend fun getPopularBlog(): Set<String>? {
         return blogService.getPopularBlog();
     }
 }

@@ -1,7 +1,9 @@
 package com.example.demo.port.`in`
 
-interface BlogDomainService {
-    suspend fun getBlogSearch(keyword: String?, sort: String, page: Int, size: Int): Object?
+import com.example.demo.model.BlogDto
 
-    suspend fun getPopularBlog(): Object?
+interface BlogDomainService {
+    suspend fun getBlogSearch(query: String, sort: String, page: Int, size: Int): BlogDto?
+
+    suspend fun getPopularBlog(): Set<String>?
 }

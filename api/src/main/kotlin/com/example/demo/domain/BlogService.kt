@@ -1,6 +1,7 @@
 package com.example.demo.domain
 
 import com.example.demo.model.BlogDto
+import com.example.demo.model.BlogRankingDto
 import com.example.demo.port.`in`.BlogDomainService
 import lombok.RequiredArgsConstructor
 import lombok.extern.slf4j.Slf4j
@@ -16,7 +17,7 @@ class BlogService(
         return blogDomainService.getBlogSearch(query, sort, page, size)
     }
 
-    suspend fun getPopularBlog(): Set<String>? {
+    suspend fun getPopularBlog(): List<BlogRankingDto>? {
         return blogDomainService.getPopularBlog()
     }
 }

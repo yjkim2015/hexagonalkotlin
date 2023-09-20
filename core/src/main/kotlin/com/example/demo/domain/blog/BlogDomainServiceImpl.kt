@@ -3,6 +3,7 @@ package com.example.demo.domain.blog
 import com.example.demo.exception.CommonErrorCode
 import com.example.demo.exception.CustomException
 import com.example.demo.model.BlogDto
+import com.example.demo.model.BlogRankingDto
 import com.example.demo.port.`in`.BlogDomainService
 import com.example.demo.port.out.BlogGateway
 import org.springframework.stereotype.Service
@@ -25,7 +26,7 @@ class BlogDomainServiceImpl(
         return blogSearch
     }
 
-    override suspend fun getPopularBlog(): Set<String>? {
+    override suspend fun getPopularBlog(): List<BlogRankingDto>? {
         return blogGateway.getPopularBlog()
     }
 

@@ -97,7 +97,7 @@ class BlogGatewayImpl: BlogGateway {
        blogRedisService.incrementBlogScore(query)
     }
 
-    override suspend fun getPopularBlog() : Set<String>? {
+    override suspend fun getPopularBlog() : List<BlogRankingDto>? {
         return blogRedisService.getPupularBlogs()
     }
 

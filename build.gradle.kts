@@ -1,7 +1,4 @@
-import org.jetbrains.kotlin.com.intellij.openapi.vfs.StandardFileSystems.jar
-import org.jetbrains.kotlin.gradle.plugin.mpp.pm20.util.archivesName
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import org.jetbrains.kotlin.storage.CacheResetOnProcessCanceled.enabled
 
 plugins {
     id("org.springframework.boot") version "2.7.6" apply false
@@ -35,7 +32,6 @@ subprojects {
         implementation("org.springframework.boot:spring-boot-starter")
         implementation("org.jetbrains.kotlin:kotlin-reflect")
         testImplementation("org.springframework.boot:spring-boot-starter-test")
-        implementation("io.springfox:springfox-boot-starter:3.0.0")
 
         implementation("org.jetbrains.kotlin:kotlin-reflect")
         implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
@@ -63,7 +59,6 @@ subprojects {
         implementation("org.springframework.boot:spring-boot-starter-data-redis") // 추가
         implementation("it.ozimov:embedded-redis:0.7.2")
         testImplementation("io.mockk:mockk:1.13.7")
-
 
         tasks.withType<KotlinCompile> {
             kotlinOptions {

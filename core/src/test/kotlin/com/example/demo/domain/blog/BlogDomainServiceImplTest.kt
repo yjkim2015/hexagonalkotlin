@@ -21,9 +21,9 @@ class BlogDomainServiceImplTest {
     @InjectMocks lateinit var blogDomainServiceImpl: BlogDomainServiceImpl
 
     var query: String = "김밥"
-    var page: Int = 0
+    var page: Int = 1
     var size: Int = 10
-    var sort = "Accuracy"
+    var sort = "accuracy"
 
 
     @Test

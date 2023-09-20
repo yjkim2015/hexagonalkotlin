@@ -86,9 +86,14 @@ class BlogRedisServiceTest
                 blogRedisService.incrementBlogScore("16")
             }
         }
-        val pupularBlogs = blogRedisService.getPupularBlogs()
+        val popularBlogs = blogRedisService.getPupularBlogs()
 
-        log.info("pupularBlogs {}", pupularBlogs)
+        val iterator = popularBlogs!!.iterator()
+
+        while(iterator.hasNext()){
+            val blogRankingDto = iterator.next()
+            log.info("blogRankingDto {}", blogRankingDto)
+        }
     }
 
 

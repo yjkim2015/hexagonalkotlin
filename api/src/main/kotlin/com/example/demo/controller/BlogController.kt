@@ -2,6 +2,7 @@ package com.example.demo.controller
 
 import com.example.demo.domain.BlogService
 import com.example.demo.model.BlogDto
+import com.example.demo.model.BlogRankingDto
 import lombok.RequiredArgsConstructor
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestMethod
@@ -21,7 +22,7 @@ class BlogController(
     }
 
     @RequestMapping(value=["/popularity"], produces = ["application/json"], method = [RequestMethod.GET])
-    suspend fun getPopularBlog(): Set<String>? {
+    suspend fun getPopularBlog(): List<BlogRankingDto>? {
         return blogService.getPopularBlog();
     }
 }

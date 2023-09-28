@@ -41,8 +41,7 @@ class EmbeddedRedisConfig {
         try {
             redisServer!!.start()
         }
-        catch(e: Exception) {
-
+        catch (e: Exception) {
         }
     }
 

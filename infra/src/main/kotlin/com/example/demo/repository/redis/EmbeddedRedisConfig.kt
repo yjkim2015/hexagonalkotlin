@@ -38,7 +38,12 @@ class EmbeddedRedisConfig {
     @Throws(IOException::class)
     fun redisServer() {
         redisServer = RedisServer(redisPort)
-        redisServer!!.start()
+        try {
+            redisServer!!.start()
+        }
+        catch(e: Exception) {
+
+        }
     }
 
     @PreDestroy

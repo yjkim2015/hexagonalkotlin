@@ -63,7 +63,7 @@ subprojects {
         tasks.withType<KotlinCompile> {
             kotlinOptions {
                 freeCompilerArgs += "-Xjsr305=strict"
-                jvmTarget = "1.8"
+                jvmTarget = "11"
             }
         }
 
